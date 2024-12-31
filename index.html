@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Inter;
+        }
+
+        body {
+            font-family: Inter;
+        }
+
+        .Home {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 40px;
+            background-color: #E1D4C9;
+        }
+
+        .header {
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+        }
+
+        .menu-item {
+            text-decoration: none;
+            font-family: Inter;
+            font-weight: 600;
+            font-size: 16px;
+            color: #403F3D;
+            position: relative;
+        }
+
+        .menu-item::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #403F3D;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        .menu-item:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .menu-right {
+            position: absolute;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .coffee-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .menu-right:hover {
+            opacity: 1;
+        }
+
+        .hero {
+            background-image: url('/Login-page/Lending-page/img/img-hero.jpg');
+            background-color: #e9e6e2;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            max-width: 1440px;
+
+            height: 644px;
+            position: relative;
+            border-radius: 40px;
+            margin: 20px auto;
+            /* border: 1px solid red; */
+            margin-bottom: 100px;
+
+        }
+
+        .offer {
+            position: absolute;
+            left: 100px;
+            bottom: 100px;
+            max-width: 530px;
+            color: #403F3D;
+            /* border: 1px solid red; */
+
+            flex-direction: column;
+        }
+
+        .offer span {
+            display: contents;
+            font-family: 'Inter';
+            font-weight: 600;
+            font-style: italic;
+            font-size: 72px;
+            margin-bottom: 20px;
+        }
+
+        .offer span .highlight {
+            font-family: 'Inter';
+            color: #B0907A;
+            height: 20px;
+            font-size: 72px;
+        }
+
+
+        .offer .main-text {
+            color: #E1D4C9;
+            font-family: Inter;
+        }
+
+        .offer .medium-text {
+            color: #E1D4C9;
+            font-family: Inter;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 40px;
+            margin-top: 40px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+
+
+        .offer button {
+            position: relative;
+            width: 200px;
+            height: 64px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #E1D4C9;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            overflow: hidden;
+            gap: 10px;
+        }
+
+        .offer button span {
+            position: relative;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 600;
+            color: #403F3D;
+        }
+
+        .offer button .coffee-icon {
+            width: 20px;
+            height: 20px;
+            opacity: 0;
+            margin-left: -10px;
+            transition: opacity 0.3s ease, margin-left 0.3s ease;
+        }
+
+        .offer button:hover span {
+            transform: translateX(10px);
+        }
+
+        .offer button:hover .coffee-icon {
+            opacity: 1;
+            margin-left: 5px;
+        }
+
+
+        text .about,
+        .mobile-app,
+        .contacts {
+            width: 100%;
+            max-width: 1440px;
+            margin: 20px auto;
+            gap: 40px;
+            /* border: 1px solid red; */
+        }
+
+        .about {
+            width: auto;
+            height: 695px;
+            /* border: 1px solid goldenrod; */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .about .container {
+            text-align: justify;
+
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            text-align: left;
+            text-align: justify;
+            /* border: 1px solid red; */
+
+        }
+
+        .container p {
+            text-align: justify;
+            font-family: Inter;
+            font-size: 60px;
+            font-weight: 600;
+            line-height: 75px;
+            text-align: left;
+            color: #403F3D;
+            margin: 0;
+            padding: 0;
+
+        }
+
+
+        .container span {
+            text-align: justify;
+
+            font-family: Inter;
+            font-size: 60px;
+            /* font-style: italic; */
+            font-weight: 600;
+            line-height: 75px;
+            color: #B0907A;
+        }
+
+        .images {
+            height: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            perspective: 1000px;
+        }
+
+        .column-2 {
+            width: 100%;
+            max-width: 660px;
+            height: 430px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .column-2 figure img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .column-2:hover figure img {
+            transform: scale(1.1);
+        }
+
+
+
+        .mobile-app {
+            height: 243px;
+            gap: 1000px;
+            margin-bottom: 100px;
+            margin-top: 100px;
+
+        }
+
+        .mobile-app .container {
+            width: auto;
+            height: 243pxpx;
+            max-width: 1360px;
+            opacity: 0px;
+            padding: 0px;
+            margin: 0px;
+            padding-bottom: 40px;
+        }
+
+        .mobile-app .container .heading-2 {
+            font-size: 60px;
+            font-weight: 600;
+            line-height: 75px;
+            text-align: left;
+            display: block;
+            margin-bottom: 40px;
+            /* border: 1px solid black; */
+
+        }
+
+
+        .mobile-app .container .heading-1 {
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            text-align: left;
+            display: block;
+            color: #403F3D;
+            /* border: 1px solid black; */
+        }
+
+        .mobile-app .container .heading-2 .download-span {
+            font-family: Inter;
+            font-style: italic;
+
+            color: #B0907A;
+        }
+
+        .mobile-app .container .heading-2 {
+            font-family: Inter;
+            color: #403F3D;
+        }
+
+        .buttons {
+            padding-top: 40px;
+            display: flex;
+            gap: 16px;
+        }
+
+        .buttons button {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 200px;
+            height: 64px;
+            padding: 12px 20px;
+            gap: 8px;
+            /* Space between icon and text */
+            border: 1px solid #665F55;
+            border-radius: 100px;
+            background-color: #E1D4C9;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            text-align: left;
+            color: #000;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        .buttons button:hover {
+            background-color: #665F55;
+            color: #E1D4C9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .buttons .btn-app-store:hover .apple-icon {
+            content: url("img/Vector\ \(1\).svg");
+            transition: content 0.3s ease;
+        }
+
+        .buttons .btn-google:hover .google-icon {
+            content: url("img/Icon\ \(1\).svg");
+            transition: content 0.3s ease;
+        }
+
+
+
+        .buttons .btn-app-store .text-container,
+        .buttons .btn-google .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .buttons .span-apple,
+        .buttons .span-google {
+            font-family: Inter;
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 14px;
+            color: inherit;
+            margin: 0;
+        }
+
+
+
+        .buttons .store-name {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            color: inherit;
+        }
+
+
+
+        .contacts .container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: auto;
+            height: 342px;
+            gap: 100px;
+            border-radius: 40px;
+            opacity: 0px;
+            background-color: #665F55;
+
+        }
+
+        .contacts .container .contacts-info {
+
+            width: 1160px;
+            height: 142px;
+            gap: 40px;
+            opacity: 0px;
+            margin: 100px;
+
+
+            font-family: Inter;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 30px;
+            text-align: left;
+
+
+        }
+
+        .contacts .container .contacts-info .heading-3 {
+
+            width: 1160px;
+            height: 30px;
+            gap: 0px;
+            opacity: 0px;
+
+            font-family: Inter;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 30px;
+            text-align: left;
+            line-height: 125%;
+            display: block;
+
+
+            color: #E1D4C9;
+            padding-bottom: 40px;
+
+
+        }
+
+
+
+        .contacts .container .contacts-info .phone {
+            width: 175px;
+            height: 24px;
+
+            font-family: Inter;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 30px;
+            text-align: left;
+            color: #E1D4C9;
+            display: block;
+
+
+            display: block;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            text-align: left;
+            position: relative;
+            text-decoration: none;
+        }
+
+
+
+        .contacts .container .contacts-info .phone:after {
+            background: none repeat scroll 0 0 transparent;
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+
+            background-color: #E1D4C9;
+            transition: width 0.7s ease 0s, left 0.7s ease 0s;
+            width: 0;
+        }
+
+        .contacts .container .contacts-info .phone:hover:after {
+            width: 94%;
+            left: 0;
+        }
+
+
+        .contacts .container .contacts-info .time {
+            width: 262px;
+            height: 28px;
+            gap: 4px;
+            opacity: 0px;
+
+            font-family: Inter;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 30px;
+            text-align: left;
+            display: block;
+            color: #E1D4C9;
+
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            text-align: left;
+
+            padding-top: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Home">
+        <div class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a class="menu-item" href="#">Favorite coffee</a>
+                    <a class="menu-item" href="#">About</a>
+                    <div class="menu-right">
+                        <a class="menu-item" href="#">Menu</a>
+                        <img class="coffee-icon" alt="Coffee Cup" src="img/coffee-cup.svg" />
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="hero">
+            <div class="offer">
+                <span class="main-text">
+                    <span class="highlight">Enjoy</span>&nbsp;premium<br>
+                    coffee at our charming cafe
+                </span>
+                <text class="medium-text">
+                    With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular
+                    destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite
+                    beverage.
+                </text>
+                <button>
+                    <span>
+                        Menu
+                    </span>
+                    <img class="coffee-icon" alt="Coffee Cup" src="img/coffee-cup.svg" />
+
+                </button>
+            </div>
+        </div>
+
+        <div class="about">
+            <div class="container">
+                <p class="heading-2-p">
+                    Resource is <span>the perfect and cozy place</span> where
+                    <br>you can enjoy a variety of hot
+                    beverages, relax, <br>catch up with friends, orget some work done.
+                </p>
+                <div class="images">
+                    <div class="column-2">
+                        <figure>
+                            <img src="/Login-page/Lending-page/img/about-3.jpg" alt="About Image" />
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="mobile-app">
+            <div class="container">
+                <span class="heading-2">
+                    <span class="download-span">Download</span> our apps to start ordering<br>
+                </span>
+                <span class="heading-1">
+                    Download the Resource app today and experience the comfort of ordering your favorite coffee from
+                    wherever you are
+                </span>
+
+                <div class="buttons">
+                    <button class="btn-app-store">
+                        <img class="apple-icon" alt="Apple icon" src="img/Vector.svg" />
+                        <div class="text-container">
+                            <span class="span-apple">Available on the</span>
+                            <strong class="store-name">App Store</strong>
+                        </div>
+                    </button>
+
+                    <button class="btn-google">
+                        <img class="google-icon" alt="Google icon" src="img/icon.svg" />
+                        <div class="text-container">
+                            <span class="span-google">
+                                Available on the
+                            </span>
+                            <strong class="store-name">Google</strong>
+                        </div>
+                    </button>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="contacts">
+            <div class="container">
+                <div class="contacts-info">
+                    <span class="heading-3">
+
+                        Contact us
+                    </span>
+                    <div class="contacts">
+                        <a href="index.html" style="text-decoration: none;">
+                            <span class="phone">
+                                <img class="phone-icon" alt="phone icon" src="img/phone.svg" />
+                                +1 (603) 555-0123
+                            </span>
+                        </a>
+
+                        <span class="time">
+                            <img class="time-icon" alt="time icon" src="img/clock.svg" />
+                            Mon-Sat: 9:00 AM – 23:00 PM
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
